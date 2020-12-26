@@ -1,4 +1,3 @@
-import 'package:SchulteTableApp/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -12,26 +11,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             buildWelcomeTextGroup(context),
-            Expanded(
-              flex: 7,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: SvgPicture.asset(
-                      'assets/svg/play.svg',
-                      height: 30,
-                      width: 30,
-                    ),
-                    label: Text(
-                      'Play now!',
-                      style: Theme.of(context).textTheme.button,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            buildButton(context),
             buildMadeByText(context),
           ],
         ),
@@ -62,6 +42,31 @@ class HomeScreen extends StatelessWidget {
                       ),
                 ),
               ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Expanded buildButton(BuildContext context) {
+    return Expanded(
+      flex: 7,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, '/game');
+            },
+            icon: SvgPicture.asset(
+              'assets/svg/play.svg',
+              height: 30,
+              width: 30,
+            ),
+            label: Text(
+              'Play Game!',
+              style: Theme.of(context).textTheme.button,
             ),
           ),
         ],

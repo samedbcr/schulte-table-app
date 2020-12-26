@@ -10,7 +10,6 @@ class CustomTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         primary: AppConstants.lightColor,
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 30),
         onPrimary: AppConstants.primaryColor,
       ),
     ),

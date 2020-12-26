@@ -68,6 +68,9 @@ class HomeScreen extends StatelessWidget {
               'Play Game!',
               style: Theme.of(context).textTheme.button,
             ),
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 30),
+            ),
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:SchulteTableApp/theme/custom_theme.dart';
+import 'package:SchulteTableApp/view/game_view.dart';
 import 'package:SchulteTableApp/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,8 +18,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: HomeScreen(),
       theme: CustomTheme.darkTheme,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/game': (context) => GameScreen(),
+      },
     );
   }
 }

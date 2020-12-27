@@ -10,16 +10,16 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            buildWelcomeTextGroup(context),
-            buildButton(context),
-            buildMadeByText(context),
+            _buildWelcomeTextGroup(context),
+            _buildButton(context),
+            _buildMadeByText(context),
           ],
         ),
       ),
     );
   }
 
-  Expanded buildWelcomeTextGroup(BuildContext context) {
+  Expanded _buildWelcomeTextGroup(BuildContext context) {
     return Expanded(
       flex: 2,
       child: Column(
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Expanded buildButton(BuildContext context) {
+  Expanded _buildButton(BuildContext context) {
     return Expanded(
       flex: 7,
       child: Column(
@@ -77,7 +77,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Expanded buildMadeByText(BuildContext context) {
+  Expanded _buildMadeByText(BuildContext context) {
     return Expanded(
       flex: 1,
       child: Center(

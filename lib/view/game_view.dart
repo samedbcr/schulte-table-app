@@ -1,5 +1,6 @@
 import 'package:SchulteTableApp/model/game_model.dart';
 import 'package:SchulteTableApp/view_model/game_view_model.dart';
+import 'package:SchulteTableApp/widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
 
 class GameScreen extends StatefulWidget {
@@ -99,6 +100,15 @@ class _GameScreenState extends State<GameScreen> {
                       _gameList[index].value, index)) {
                     setState(() {});
                   }
+/*                   showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return CustomDialog(
+                        point: 32,
+                      );
+                    },
+                  ); */
                 },
                 child: Text(
                   _gameList[index].value.toString(),

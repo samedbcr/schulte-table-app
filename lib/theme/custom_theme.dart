@@ -32,10 +32,20 @@ class CustomTheme {
         color: AppConstants.lightGreyColor,
         fontWeight: FontWeight.normal,
       ),
+      headline4: TextStyle(
+        fontSize: 30,
+        color: AppConstants.lightColor,
+        fontWeight: FontWeight.w500,
+      ),
       headline5: TextStyle(
         fontSize: 23,
         color: AppConstants.lightColor,
         fontWeight: FontWeight.normal,
+      ),
+      headline6: TextStyle(
+        fontSize: 19,
+        color: AppConstants.lightColor,
+        fontWeight: FontWeight.w500,
       ),
       button: TextStyle(
         fontSize: 18,

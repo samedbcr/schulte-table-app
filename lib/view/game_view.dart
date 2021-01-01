@@ -120,8 +120,8 @@ class _GameScreenState extends State<GameScreen> {
     );
   }
 
-  Future _showDialog(BuildContext context, time) {
-    return showDialog(
+  Future _showDialog(BuildContext context, time) async {
+    var data = await showDialog(
       barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
@@ -130,5 +130,7 @@ class _GameScreenState extends State<GameScreen> {
         );
       },
     );
+    Navigator.pop(context);
+    return data;
   }
 }

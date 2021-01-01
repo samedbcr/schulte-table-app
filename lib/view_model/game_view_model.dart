@@ -4,9 +4,12 @@ class GameViewModel {
   final int level;
   final int incrementCount;
   int startNumber;
+  int _counterIndex = 0;
+  bool isGameOver = false;
 
   List<GameModel> _gameList;
 
+  // ignore: slash_for_doc_comments
   /**
    * [level] field is the level of the game and 
    * it used for generate the length of the list with
@@ -37,6 +40,10 @@ class GameViewModel {
     if (clickedValue == startNumber) {
       gameList[index].isVisible = false;
       startNumber += incrementCount;
+      _counterIndex++;
+      if (_counterIndex == level * level) {
+        isGameOver = true;
+      }
       return true;
     }
     return false;

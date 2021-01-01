@@ -89,6 +89,7 @@ class _GameScreenState extends State<GameScreen> {
             crossAxisSpacing: 12.0,
             mainAxisSpacing: 12.0,
           ),
+          itemCount: _gameList.length,
           itemBuilder: (BuildContext context, index) {
             return AnimatedOpacity(
               opacity: _gameList[index].isVisible ? 1 : 0,
@@ -98,17 +99,12 @@ class _GameScreenState extends State<GameScreen> {
                 onPressed: () {
                   if (_viewModel.isClickedValueCorrect(
                       _gameList[index].value, index)) {
-                    setState(() {});
+                    setState(() {
+                      if (_viewModel.isGameOver) {
+                        _showDialog(context, _counter.stopTimer());
+                      }
+                    });
                   }
-/*                   showDialog(
-                    barrierDismissible: false,
-                    context: context,
-                    builder: (BuildContext context) {
-                      return CustomDialog(
-                        point: 32,
-                      );
-                    },
-                  ); */
                 },
                 child: Text(
                   _gameList[index].value.toString(),
@@ -116,38 +112,20 @@ class _GameScreenState extends State<GameScreen> {
               ),
             );
           },
-          itemCount: _gameList.length,
         ),
       ),
     );
   }
-}
 
-/* 
-GridView.count(
-          primary: false,
-          shrinkWrap: true,
-          crossAxisCount: 4,
-          crossAxisSpacing: 12.0,
-          mainAxisSpacing: 12.0,
-          children: [
-            ..._gameList.map(
-              (e) => AnimatedOpacity(
-                opacity: e.isVisible ? 1 : 0,
-                duration: Duration(milliseconds: 200),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
-                  onPressed: () {
-                    if (_viewModel.isClickedValueCorrect(e.value, 0)) {
-                      setState(() {});
-                    }
-                  },
-                  child: Text(
-                    e.value.toString(),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-*/
+  Future _showDialog(BuildContext context, time) {
+    return showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return CustomDialog(
+          point: time,
+        );
+      },
+    );
+  }
+}

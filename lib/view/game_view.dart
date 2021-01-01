@@ -1,5 +1,6 @@
 import 'package:SchulteTableApp/model/game_model.dart';
 import 'package:SchulteTableApp/view_model/game_view_model.dart';
+import 'package:SchulteTableApp/widgets/counter.dart';
 import 'package:SchulteTableApp/widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -12,13 +13,15 @@ class GameScreen extends StatefulWidget {
 
 class _GameScreenState extends State<GameScreen> {
   GameViewModel _viewModel;
+  Counter _counter;
 
   List<GameModel> _gameList;
 
   @override
   void initState() {
+    _counter = Counter();
     _viewModel = GameViewModel(
-      level: 4,
+      level: 2,
       startNumber: 1,
       incrementCount: 1,
     );

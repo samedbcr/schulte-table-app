@@ -36,11 +36,7 @@ class CustomDialog extends StatelessWidget {
 
   Expanded buildSvgPicture() {
     return Expanded(
-      child: AnimatedOpacity(
-        duration: Duration(seconds: 2),
-        opacity: 1,
-        child: SvgPicture.asset("assets/svg/winners.svg"),
-      ),
+      child: SvgPicture.asset("assets/svg/winners.svg"),
     );
   }
 

@@ -41,26 +41,37 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Text('Welcome, Samed!', style: Theme.of(context).textTheme.headline5),
           SizedBox(height: 16),
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: 'Your best score is ',
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-                TextSpan(
-                  text: '${_viewModel.bestScore} secs!',
-                  style: Theme.of(context).textTheme.bodyText1.copyWith(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.0,
-                      ),
-                ),
-              ],
-            ),
-          ),
+          _buildBestScoreText(context),
         ],
       ),
     );
+  }
+
+  Widget _buildBestScoreText(BuildContext context) {
+    if (_viewModel.bestScore > 0) {
+      return RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: 'Your best score is ',
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
+            TextSpan(
+              text: '${_viewModel.bestScore} secs!',
+              style: Theme.of(context).textTheme.bodyText1.copyWith(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16.0,
+                  ),
+            ),
+          ],
+        ),
+      );
+    } else {
+      return Text(
+        'Play now to get your first score!',
+        style: Theme.of(context).textTheme.bodyText1,
+      );
+    }
   }
 
   Expanded _buildButton(BuildContext context) {

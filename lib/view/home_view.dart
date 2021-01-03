@@ -1,8 +1,22 @@
+import 'package:SchulteTableApp/view_model/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  HomeViewModel _viewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _viewModel = HomeViewModel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
                 TextSpan(
-                  text: '42 secs!',
+                  text: '${_viewModel.bestScore} secs!',
                   style: Theme.of(context).textTheme.bodyText1.copyWith(
                         fontWeight: FontWeight.w600,
                         fontSize: 16.0,
@@ -57,7 +71,11 @@ class HomeScreen extends StatelessWidget {
         children: [
           ElevatedButton.icon(
             onPressed: () {
-              Navigator.pushNamed(context, '/game');
+              Navigator.pushNamed(context, '/game').then((value) {
+                if (_viewModel.isBestScoreChanged(value)) {
+                  setState(() {});
+                }
+              });
             },
             icon: SvgPicture.asset(
               'assets/svg/play.svg',

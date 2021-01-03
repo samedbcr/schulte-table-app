@@ -130,7 +130,7 @@ class _GameScreenState extends State<GameScreen> {
         );
       },
     );
-    Navigator.pop(context);
+    Navigator.pop(context, time);
     return data;
   }
 }

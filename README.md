@@ -1,16 +1,15 @@
-# SchulteTableApp
+# Schulte Table App
 
-A new Flutter project.
+Schulte Table Game – Mobile Application that made with Flutter. I have tried to make Classic Light game in [this site](https://schulte-table.com/).
 
-## Getting Started
+### How to use?
 
-This project is a starting point for a Flutter application.
+You can customize this app via change some values into source code. In ```lib/view/home_view.dart``` folder, you can modify ```level```, ```startNumber``` and ```incrementCount``` values in order to increase or decrease difficulty.
 
-A few resources to get you started if this is your first Flutter project:
+**Using Packages:**
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- flutter_svg
+- cupertino_icons
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Photos
+![Preview](mockup_photos/photo_1.png)

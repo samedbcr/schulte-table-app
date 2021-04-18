@@ -21,7 +21,7 @@ class _GameScreenState extends State<GameScreen> {
   void initState() {
     _counter = Counter();
     _viewModel = GameViewModel(
-      level: 2,
+      level: 4,
       startNumber: 1,
       incrementCount: 1,
     );

@@ -4,7 +4,7 @@ Schulte Table Game – Mobile Application that made with Flutter. I have tried t
 
 ### How to use?
 
-You can customize this app via change some values into source code. In ```lib/view/home_view.dart``` folder, you can modify ```level```, ```startNumber``` and ```incrementCount``` values in order to increase or decrease difficulty.
+You can customize this app via change some values into source code. In ```lib/view/home_view.dart``` file, you can modify ```level```, ```startNumber``` and ```incrementCount``` values in order to increase or decrease difficulty.
 
 **Using Packages:**
 
